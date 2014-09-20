@@ -78,7 +78,7 @@ def hash(path: str, hashfunc=_hashlib.sha1) -> bytes:
 
 
 def walk(path: str) -> [str]:
-    """Recursively get a list of all files below the given path."""
+    """Get a list of all non-directory files below the given path."""
 
     def join(dirname, filenames):
         return [_os.path.join(dirname, filename) for filename in filenames]
