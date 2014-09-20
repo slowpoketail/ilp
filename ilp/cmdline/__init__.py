@@ -254,5 +254,8 @@ class ILP:
             self._index = Index()
 
 
+def main():
+    plac.Interpreter.call(ILP, prompt="ilp> ")
+
 if __name__ == "__main__":
-    plac.Interpreter.call(ILP, prompt="ilp>")
+    main()
