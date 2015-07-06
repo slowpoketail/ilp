@@ -209,7 +209,7 @@ class ILP:
                         yield(path)
 
     def search(self,
-               query: "the search query"):
+               query: "the search query (see ILP(1) for info about syntax)"):
         split = shlex.split(query)
         result = self._build_search_result(
             funcset(self._index.hashes), "or", split)
@@ -248,7 +248,7 @@ class ILP:
         if not yes:
             yield "This command purges the database."
             yield "You will LOSE ALL DATA!"
-            yield "If you really want this, pass -y to this command."
+            yield "If you really want this, pass --yes/-y to this command."
         else:
             yield "Purging the database."
             self._index = Index()
