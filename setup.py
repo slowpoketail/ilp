@@ -8,7 +8,8 @@
 from setuptools import setup
 
 import subprocess
-import os
+
+from ilp.utils import check_program
 
 
 def make_manpage():
@@ -16,19 +17,7 @@ def make_manpage():
         "a2x", "--format", "manpage", "README.txt"])
 
 
-def check_a2x():
-    '''Check if a2x is available.'''
-    try:
-        devnull = open(os.devnull)
-        subprocess.Popen(
-            ['a2x', '-h'], stdout=devnull, stderr=devnull).communicate()
-    except OSError as e:
-        if e.errno == os.errno.ENOENT:
-            return False
-    return True
-
-
-if check_a2x():
+if check_program("a2x"):
     make_manpage()
 else:
     print("WARNING: asciidoc is not installed, can't generate man page.")
@@ -38,7 +27,7 @@ setup(name='ilp',
       long_description="""
       ilp is a tool to index, tag, and search through collections of files.
       """,
-      version='0.1.2',
+      version='0.2',
       author='slowpoke',
       author_email='mail+python at slowpoke dot io',
       url='https://github.com/slowpoketail/ilp',
