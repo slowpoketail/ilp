@@ -27,7 +27,7 @@ setup(name='ilp',
       long_description="""
       ilp is a tool to index, tag, and search through collections of files.
       """,
-      version='0.2',
+      version='0.2.1',
       author='slowpoke',
       author_email='mail+python at slowpoke dot io',
       url='https://github.com/slowpoketail/ilp',
