@@ -2,12 +2,12 @@
 .\"     Title: ilp
 .\"    Author: slowpoke <mail+git@slowpoke.io>
 .\" Generator: DocBook XSL Stylesheets v1.78.0 <http://docbook.sf.net/>
-.\"      Date: 09/20/2014
+.\"      Date: 07/06/2015
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "ILP" "1" "09/20/2014" "\ \&" "\ \&"
+.TH "ILP" "1" "07/06/2015" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -36,7 +36,7 @@ ilp <subcommand> [<args>]
 ilp \-i
 .SH "DESCRIPTION"
 .sp
-ilp is a command\-line utility which indexes files, and organizes them with tags\&. It will not touch the files on disk, but instead keep track of them in a database, much like the mlocate utility found on many UNIX or UNIX\-like system\&. To uniquely identify a file, ilp stores it as a hash of its contents\&.
+ilp is a command\-line utility which indexes files, and organizes them with tags\&. It will not touch the files on disk, but instead keep track of them in a database, much like the mlocate utility found on many UNIX or UNIX\-like systems\&. To uniquely identify a file, ilp stores it as a hash of its contents\&.
 .SH "OPTIONS"
 .PP
 <subcommand>
@@ -102,7 +102,7 @@ or
 .PP
 ilp info [\-t] <what>
 .RS 4
-Get info on files or tags\&. Since filenames and tags can\(cqt be meaningfully differentiated,
+Get info on files or tags\&. Since filenames and tags can\(cqt meaningfully be differentiated,
 \fI\-t\fR
 (\fI\-\-tag\fR) needs to be passed if information on a tag is wanted\&.
 .RE
@@ -195,7 +195,7 @@ foo xor bar not baz not spam
 If no operator is given at all, "or" is implied\&. That means search for "foo bar" is the same as searching for "foo or bar" (or even "or foo or bar")\&.
 .SH "TRIVIA"
 .sp
-If you have wondered what ilp stands for, its an acronym for Index Librorum Prohibitorum \- the infamous (and since 1966 defunct) list of books prohibited by the Vatican\&. It\(cqs really just the first thing that came to mind in relation to indexing files, and "ilp" sounded catchy and is short to type\&. Besides, Latin names make everything sound more awesome\&.
+If you have wondered what ilp stands for, its an acronym for Index Librorum Prohibitorum \- the infamous (and since 1966 defunct) list of books prohibited by the Vatican\&. It\(cqs really just the first thing that came to mind in relation to indexing files, and "ilp" sounded catchy and is short to type\&. Besides, \fBomnia dicta fortiora si dicta Latina\fR ("everything sounds more impressive when said in Latin")\&.
 .SH "AUTHOR"
 .PP
 \fBslowpoke\fR <\&mail+git@slowpoke\&.io\&>
