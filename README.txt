@@ -21,7 +21,7 @@ DESCRIPTION
 ilp is a command-line utility which indexes files, and organizes them
 with tags. It will not touch the files on disk, but instead keep track of them
 in a database, much like the mlocate utility found on many UNIX or UNIX-like
-system. To uniquely identify a file, ilp stores it as a hash of its
+systems. To uniquely identify a file, ilp stores it as a hash of its
 contents.
 
 OPTIONS
@@ -66,7 +66,7 @@ ilp list <what>::
     List items on the index. <what> can be 'files' or 'tags'.
 
 ilp info [-t] <what>::
-    Get info on files or tags. Since filenames and tags can't be meaningfully
+    Get info on files or tags. Since filenames and tags can't meaningfully be
     differentiated, '-t' ('--tag') needs to be passed if information on a tag is
     wanted.
 
@@ -133,5 +133,6 @@ TRIVIA
 If you have wondered what ilp stands for, its an acronym for Index Librorum
 Prohibitorum - the infamous (and since 1966 defunct) list of books prohibited by
 the Vatican. It's really just the first thing that came to mind in relation to
-indexing files, and "ilp" sounded catchy and is short to type. Besides, Latin
-names make everything sound more awesome.
+indexing files, and "ilp" sounded catchy and is short to type. Besides, *omnia
+dicta fortiora si dicta Latina* ("everything sounds more impressive when said in
+Latin").
