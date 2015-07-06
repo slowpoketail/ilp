@@ -9,6 +9,7 @@
 
 import os
 import shlex
+import subprocess
 
 from distutils.util import strtobool
 
@@ -17,6 +18,7 @@ import plac
 from .. import database
 from ..utils import file
 from ..utils import funcset
+from ..utils import check_program
 
 from ..index import Index
 
@@ -34,7 +36,8 @@ class ILP:
         "list",
         "info",
         "search",
-        "clear")
+        "clear",
+        "show")
 
     def __init__(self):
         home = os.getenv("HOME")
@@ -252,6 +255,14 @@ class ILP:
         else:
             yield "Purging the database."
             self._index = Index()
+
+    def show(self,
+             path: "the file to display"):
+        """Try to open and display a file using xdg-open."""
+        if not check_program("xdg-open"):
+            yield "xdg-open is not available, is xdg-utils installed?"
+        else:
+            subprocess.call(["xdg-open", path])
 
 
 def main():
