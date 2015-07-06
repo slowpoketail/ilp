@@ -8,7 +8,6 @@
 # of the Anti-License. Do whatever the fuck you want.
 
 import os
-import shlex
 import subprocess
 
 from distutils.util import strtobool
@@ -212,10 +211,13 @@ class ILP:
                         yield(path)
 
     def search(self,
-               query: "the search query (see ILP(1) for info about syntax)"):
-        split = shlex.split(query)
-        result = self._build_search_result(
-            funcset(self._index.hashes), "or", split)
+               *query: "the search query (see ILP(1) for info about syntax)"):
+        try:
+            result = self._build_search_result(
+                funcset(self._index.hashes), "and", query)
+        except KeyError as e:
+            yield e.args[0]
+            return
         for hashstring in result:
             try:
                 for path in self._index.hashes.get(hashstring):
